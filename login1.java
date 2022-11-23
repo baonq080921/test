@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.*; 
 import javax.swing.*; 
 import java.awt.*; 
-import java.sql.Statement; 
+import java.sql.Statement;
 import java.sql.Connection; 
 public class login1 extends javax.swing.JFrame { 
  
