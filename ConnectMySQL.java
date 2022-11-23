@@ -1,7 +1,6 @@
 import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -9,9 +8,6 @@ import javax.swing.JOptionPane;
 
 public class ConnectMySQL { 
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) { 
 
         Connection conn = null; 
@@ -42,7 +38,7 @@ public class ConnectMySQL {
 
             //DELETE a column 
 
- PreparedStatement preparedStmt = conn.prepareStatement("delete from dssv where id = ?"); 
+ java.sql.PreparedStatement preparedStmt = conn.prepareStatement("delete from dssv where id = ?"); 
 
 preparedStmt.setInt(1, 4); 
 
@@ -58,7 +54,8 @@ preparedStmt.execute();
 
             //UPDATE a column 
 
-            PreparedStatement preparedStm,tPreparedStatement = conn.prepareStatement("update dssv set passwd = ? where id = ?");
+java.sql.PreparedStatement preparedStm = conn.prepareStatement("update dssv set passwd = ? where id = ?"); 
+
 preparedStmt.setString(1, "12345678"); 
 
 preparedStmt.setInt   (2, 4); 
